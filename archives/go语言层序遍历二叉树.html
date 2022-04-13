@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="代码小学生王木木">
+    
+    <title>
+        
+            go语言层序遍历二叉树 |
+        
+        琳琳的博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#3399FF","avatar":"/images/linlin-avatar.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"950px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"你搁这卷你马呢？"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                琳琳的博客
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="active"
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于菜逼博主
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="active"
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于菜逼博主</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="page-template-container">
+        
+        
+        <div class="page-template-content markdown-body">
+            
+                <h1 id="什么是层序遍历"><a href="#什么是层序遍历" class="headerlink" title="什么是层序遍历?"></a>什么是层序遍历?</h1><p>层序遍历，顾名思义，就是按层打印二叉树。如下图：<br><img src="/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.png"></p>
+<p>对于二叉树来说，按照每一层从左到右的顺序来打印二叉树的方式，就是层序遍历。</p>
+<p><strong>最后遍历的结果</strong>：</p>
+<p>如果需要区分每一层的元素    &#x3D;&gt; [[1],[2,3],[4,5,6,7],[8,9]]</p>
+<p>如果不严格区分每一层的的话  &#x3D;&gt; [1,2,3,4,5,6,7,8,9]</p>
+<h2 id="习题汇总"><a href="#习题汇总" class="headerlink" title="习题汇总"></a>习题汇总</h2><ul>
+<li>102.二叉树的层序遍历</li>
+<li>103.二叉树的锯齿形层序遍历</li>
+<li>104.二叉树的最大深度</li>
+<li>107.二叉树的层序遍历 II</li>
+<li>199.二叉树的右视图</li>
+</ul>
+<h1 id="层序遍历模板"><a href="#层序遍历模板" class="headerlink" title="层序遍历模板"></a>层序遍历模板</h1><p>一定要将熟记模板，因为很多习题都可以套模板。本文几乎所有题目，几乎都能套用这个模板，或者稍微改动即可。</p>
+<h2 id="不区分具体层数"><a href="#不区分具体层数" class="headerlink" title="不区分具体层数"></a>不区分具体层数</h2><p>核心思路是使用队列。不过因为 go 目前没有官方的队列库，所以我们使用数组模拟队列的功能。</p>
+<p>具体模拟过程:<br>入队 &#x3D; append(数组,元素)</p>
+<p>出队 &#x3D; 数组[0]<br>数组 &#x3D; 数组[1:]</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义二叉树结构  这里为了简单，二叉树的节点只存int类型</span></span><br><span class="line"><span class="keyword">type</span> BinaryTree <span class="keyword">struct</span> &#123;</span><br><span class="line">	Val   <span class="type">int</span></span><br><span class="line">	Left  *BinaryTree</span><br><span class="line">	Right *BinaryTree</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 二叉树层序遍历，返回对应 层序遍历结果数组</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rangeOrder</span><span class="params">(root *BinaryTree)</span></span>[]<span class="type">int</span>&#123;</span><br><span class="line">	<span class="comment">// 特殊值判断，如果整棵树为空，直接返回nil</span></span><br><span class="line">	<span class="keyword">if</span> root == <span class="literal">nil</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> ans []<span class="type">int</span></span><br><span class="line">	<span class="comment">// 1. 创建一个队列，并把头节点入队  [我们使用数组模拟队列]</span></span><br><span class="line">	myQueue := []*BinaryTree&#123;root&#125;</span><br><span class="line">	<span class="comment">// 2. 循环判断，只要队列不为空，一直循环</span></span><br><span class="line">	<span class="keyword">for</span> <span class="built_in">len</span>(myQueue) &gt; <span class="number">0</span>&#123;</span><br><span class="line">		<span class="comment">// 3. 出队</span></span><br><span class="line">		node := myQueue[<span class="number">0</span>]</span><br><span class="line">		myQueue = myQueue[<span class="number">1</span>:]</span><br><span class="line">		ans = <span class="built_in">append</span>(ans,node.Val)  <span class="comment">// 将结果添加到数组中</span></span><br><span class="line">		<span class="comment">// 如果当前元素有左子树   &gt;&gt; 入队</span></span><br><span class="line">		<span class="keyword">if</span> node.Left != <span class="literal">nil</span>&#123;</span><br><span class="line">			myQueue = <span class="built_in">append</span>(myQueue, node.Left)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 当前元素右子树不为空   &gt;&gt; 入队</span></span><br><span class="line">		<span class="keyword">if</span> node.Right != <span class="literal">nil</span>&#123;</span><br><span class="line">			myQueue = <span class="built_in">append</span>(myQueue, node.Right)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="严格区分具体层数"><a href="#严格区分具体层数" class="headerlink" title="严格区分具体层数"></a>严格区分具体层数</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义二叉树</span></span><br><span class="line"><span class="keyword">type</span> BinaryTree <span class="keyword">struct</span> &#123;</span><br><span class="line">	Val   <span class="type">int</span></span><br><span class="line">	Left  *BinaryTree</span><br><span class="line">	Right *BinaryTree</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rangeOrderHasLevel</span><span class="params">(root *BinaryTree)</span></span> [][]<span class="type">int</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> ans [][]<span class="type">int</span></span><br><span class="line">	<span class="comment">// 1. 创建一个队列，并把头节点入队  [我们使用数组模拟队列]</span></span><br><span class="line">	myQueue := []*BinaryTree&#123;root&#125;</span><br><span class="line">	<span class="comment">// 2. 循环判断，只要队列不为空，一直循环</span></span><br><span class="line">	<span class="keyword">for</span> <span class="built_in">len</span>(myQueue) &gt; <span class="number">0</span> &#123;</span><br><span class="line">		size := <span class="built_in">len</span>(myQueue)</span><br><span class="line">		<span class="keyword">var</span> tempArr []<span class="type">int</span>  <span class="comment">// 创建临时数组，用于保存每一层的元素</span></span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; size; i++ &#123;</span><br><span class="line">			<span class="comment">// 3. 出队</span></span><br><span class="line">			node := myQueue[<span class="number">0</span>]</span><br><span class="line">			myQueue = myQueue[<span class="number">1</span>:]</span><br><span class="line">			tempArr = <span class="built_in">append</span>(tempArr, node.Val) <span class="comment">// 将结果添加到数组中</span></span><br><span class="line">			<span class="comment">// 如果当前元素有左子树   &gt;&gt; 入队</span></span><br><span class="line">			<span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;</span><br><span class="line">				myQueue = <span class="built_in">append</span>(myQueue, node.Left)</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 当前元素右子树不为空   &gt;&gt; 入队</span></span><br><span class="line">			<span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;</span><br><span class="line">				myQueue = <span class="built_in">append</span>(myQueue, node.Right)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 一层遍历结束，追加结果集</span></span><br><span class="line">		ans = <span class="built_in">append</span>(ans, tempArr)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="习题汇总-1"><a href="#习题汇总-1" class="headerlink" title="习题汇总"></a>习题汇总</h1><h2 id="102-二叉的"><a href="#102-二叉的" class="headerlink" title="102 二叉的"></a>102 二叉的</h2>
+            
+        </div>
+        <div class="page-template-comments">
+            
+        </div>
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">代码小学生王木木</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

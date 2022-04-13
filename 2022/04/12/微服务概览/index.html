@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="代码小学生王木木">
+    
+    <title>
+        
+            微服务概览 |
+        
+        琳琳的博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#3399FF","avatar":"/images/linlin-avatar.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"950px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"你搁这卷你马呢？"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                琳琳的博客
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于菜逼博主
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于菜逼博主</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">微服务概览</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/linlin-avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">代码小学生王木木</span>
+                        
+                            <span class="author-label">二货码农</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-12 18:03:49</span>
+        <span class="mobile">2022-04-12 18:03</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>10 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多时候，我们更多的时间在业务上，每天都在干着CRDU的活，但是我们是工程师，不是在写一个demo，能跑起来就万事大吉。</p>
+<p>我们更多时候要去思考，要站在一个工程的角度来思考，写的接口流量大了要怎么写，怎么测试，怎么持续集成，怎么自动化部署，整个系统，怎么样才算稳定，怎样才算得上企业级应用？</p>
+<p>这些需要扎实的基础，长久的沉淀的经验，和一课持续学习的内心。</p>
+<p>很多时候我们没那么多机会去接触到这么庞大的架构，那么这个时候，去学前人的经验，是个不错的选择。</p>
+<p>而且，真正到面试的时候，除非你是刚入行的小白，一般语言层面的面试内容都不多，除非找茬，语言层面的问题一般都不会特别难。 相反一个精明的面试官会更多去问你一些关于工程方面的问题，一些实际经验，抛出一些具体的突发情况，你怎么去思考，去排查解决问题的思路如何。</p>
+<p>所以对于这种关于工程方面的方法论，我们今天就开始聊这些。</p>
+<h1 id="微服务概览"><a href="#微服务概览" class="headerlink" title="微服务概览"></a>微服务概览</h1><blockquote>
+<p>微服务的核心是组件服务化</p>
+</blockquote>
+<h2 id="单体架构-巨石应用"><a href="#单体架构-巨石应用" class="headerlink" title="单体架构 (巨石应用)"></a>单体架构 (巨石应用)</h2><p>尽管也是模块化逻辑，但是最终它还是会打包并部署为单体应用，其中最主要的问题就是这个应用太复杂，以至于任何单个开发者都不可能完全搞懂他。</p>
+<p>导致应用无法扩展，可靠性很低，最终，敏捷开发和部署无法完成！</p>
+<p><img src="/2022/04/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88/img.png"></p>
+<p>如上图，浏览器通过简单的apache负载均衡，所有请求直接落到web后端，然后请求mysql。</p>
+<p>所有的后端代码都在一坨，部署在一台服务器。巨石架构！</p>
+<h3 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h3><blockquote>
+<p>化繁为简，分而治之</p>
+</blockquote>
+<p>按照功能，拆分成粒度更小的服务</p>
+<p><img src="/2022/04/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88/img_1.png"></p>
+<p>SOA(面向服务)的架构体系</p>
+<p><img src="/2022/04/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88/img_2.png"><br>拆分后的特点:</p>
+<ul>
+<li>每个服务独占一个DB，从通路的角度来讲，单DB不可能无限扩容。DB直接的通信就使用HTTP&#x2F;RPC</li>
+<li></li>
+</ul>
+<h2 id="SOA-面向服务-的架构体系和微服务之间的关系"><a href="#SOA-面向服务-的架构体系和微服务之间的关系" class="headerlink" title="SOA(面向服务)的架构体系和微服务之间的关系"></a>SOA(面向服务)的架构体系和微服务之间的关系</h2><blockquote>
+<p>可以理解为微服务是SOA的一种实践</p>
+</blockquote>
+<p>本质上都是面向服务的架构设计模式，只不过微服务更小一点</p>
+<h4 id="小就是美"><a href="#小就是美" class="headerlink" title="小就是美"></a>小就是美</h4><p>服务小，意味着代码少，bug也少，易于测试，易于维护，也容易不断迭代完善，直到精致而美妙</p>
+<p>一般来说，小的服务，一个开发人员可以维护1~2个，甚至更多</p>
+<h4 id="单一职责"><a href="#单一职责" class="headerlink" title="单一职责"></a>单一职责</h4><p>一个服务只需要做好一件事，专注才能做好</p>
+<p>函数也好，类也好，服务也好，我们一直强调单一职责，也就是尽可能只做一件事情。</p>
+<p>就比如我们经常会写<code>common</code>这样的包,啥都往里面塞，其实不是一个很好的风格。最后common就成了“关东煮”，啥都有。</p>
+<blockquote>
+<p>虽然实现单一职责很难，而且过度追求单一职责也会导致代码阅读性降低。这个博弈需要开发人员的经验和追求。</p>
+</blockquote>
+<h4 id="尽可能早的创建原型"><a href="#尽可能早的创建原型" class="headerlink" title="尽可能早的创建原型"></a>尽可能早的创建原型</h4><p>可能早的提供服务API，建立服务契约，达成服务之间沟通的一致性约定，至于实现和完善可以慢慢做</p>
+<blockquote>
+<p>微服务之间尽早定义API这个很关键</p>
+</blockquote>
+<h4 id="可移植性比效率重要"><a href="#可移植性比效率重要" class="headerlink" title="可移植性比效率重要"></a>可移植性比效率重要</h4><p>服务间的轻量级交互协议在效率和可移植性二者之间，首要依然要考虑兼容性和可移植性</p>
+<h2 id="微服务的定义"><a href="#微服务的定义" class="headerlink" title="微服务的定义"></a>微服务的定义</h2><blockquote>
+<p>围绕业务功能构建的，服务关注单一职责，服务间采用轻量级的通信机制，可以用全自动部署，可以使用不同的编程语言和数据存储技术。微服务架构通过业务拆分实现服务组件化，通过组件组合快速开发系统，业务单一的服务组件又可以独立部署，使得整个系统变得清晰灵活</p>
+</blockquote>
+<p>从设计模式上来说，关注单一职责，围绕业务功能，采用分治思想，化繁为简。</p>
+<p>从网络通信的角度，采用轻量可靠的通信机制。保证通信效率和稳定性</p>
+<p>从工程的角度来说, 独立部署，自动化部署，可以移植性高，不是强依赖语言依赖生态</p>
+<h3 id="原子服务"><a href="#原子服务" class="headerlink" title="原子服务"></a>原子服务</h3><p>也就是单一职责</p>
+<p>如果不知道怎么划分服务，不了解业务。那么一开始，按照功能来拆！先拆粗的，等后面了解了，在细分。比如账号服务，比如订单服务，比如积分服务。这些都很容易想到</p>
+<blockquote>
+<p>先粗粒度的拆分服务，后期在慢慢演进，迭代</p>
+</blockquote>
+<p>一般来说，一个服务尽可能关注到一个业务闭环作为一个服务。在初期是比较合适的。</p>
+<h3 id="独立进程"><a href="#独立进程" class="headerlink" title="独立进程"></a>独立进程</h3><p>每一个微服务都是一个独立的进程，容器编排。</p>
+<p>独立进程就更好的实现隔离部署。</p>
+<h3 id="隔离部署"><a href="#隔离部署" class="headerlink" title="隔离部署"></a>隔离部署</h3><h3 id="去中心化治理"><a href="#去中心化治理" class="headerlink" title="去中心化治理"></a>去中心化治理</h3><h2 id="微服务缺点"><a href="#微服务缺点" class="headerlink" title="微服务缺点"></a>微服务缺点</h2><blockquote>
+<p>微服务不是万能的！</p>
+</blockquote>
+<p>基础设施的建设，复杂度高</p>
+<p>以前只有一个服务，现在成了100个服务，架构超级复杂，画图都不一定能画出来。</p>
+<p>可能你根据链路追踪啊啥的，能画出最终的架构图，服务之间的依赖特别多，如果有人破坏测试环境，就炸了</p>
+<p>特别是排障的时候，以前一个服务的时候，看看日志就大多能找到问题，现在服务多了，排障就相对困难，而且对基建的要求也很高</p>
+<blockquote>
+<p>分布式系统给，必定会带来固有的复杂性，开发者不得不使用RPC或者消息传递，来实现进程之间的通信，此外，必须要写代码来处理消息传递中速度过慢或者服务不可用等局部失效的问题</p>
+</blockquote>
+<blockquote>
+<p>分区的数据库架构，同时更新多个业务主体的事务很普遍，这种事务对于单体架构应用来说很容易，因为只有一个数据库，但是在微服务架构中，需要更新不同服务所使用到的不同数据库，从而对开发者提出了更多的要求和更高的挑战</p>
+</blockquote>
+<blockquote>
+<p>测试一个基于微服务架构的 应用也是一个很复杂的任务</p>
+</blockquote>
+<blockquote>
+<p>服务模块之间的依赖，应用的升级可能会设计到多个模块的修改，可能会出现连锁故障</p>
+</blockquote>
+<blockquote>
+<p>对运维的基础设施的挑战也很大，这么多应用是不是要上k8s，日志要收集，指标要统计，监控是不是要升级，报警是不是要做起来了…..</p>
+</blockquote>
+<p>以前代码写得烂，可能也就对数据库有点压力，但是网络通信的成本很低</p>
+<p>但是现在RPC了，比如循环调用一个微服务30次，可能上游服务也有调用其他服务，所以下游的请求，可能会被放大。导致基层服务压力过大</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">比如，获取一个文章下的前30个人的评论列表</span><br><span class="line"></span><br><span class="line">方式一：for循环调用请求30次(一定会放大请求的！)</span><br><span class="line"></span><br><span class="line">KVM 虚拟化的 pps == 30万，每一秒，发30万个包</span><br><span class="line"></span><br><span class="line">方式二： 调用一个批量接口</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>所以尽可能提供粗粒度的批量接口</li>
+<li>尽可能避免服务之间的串行调用</li>
+</ul>
+<h2 id="组件服务化"><a href="#组件服务化" class="headerlink" title="组件服务化"></a>组件服务化</h2><p>传统实现组件的方式是通过库(library),库是和应用一起运行在进程中的，库的局部变化，意味着整个应用的重新部署。</p>
+<p>通过服务来实现组件，意味着将应用拆散为一系列的服务，运行子啊不同的进程中，那么单一服务的局部变化只需要重新部署对应服务的进程</p>
+<p>首先需要有一个kit,也就是基础框架。比如springCloud,go kit ,go micro,gin</p>
+<p>然后我们必须有服务了，service&#x3D; 业务代码+ kit依赖+第三方依赖组成的业务微服务</p>
+<p>轻量级通讯： rpc + message queue（消息队列来实现： 同步请求&#x2F;异步请求）</p>
+<blockquote>
+<p> 本质上等同于，多个业务域(domain)由多个微服务组合(compose)完成一个完整的用户场景(useCase),他是一个面向场景的API设计</p>
+</blockquote>
+<h2 id="按业务组织服务"><a href="#按业务组织服务" class="headerlink" title="按业务组织服务"></a>按业务组织服务</h2><blockquote>
+<p>康威定律</p>
+</blockquote>
+<p>按业务能力组织服务的意思:服务提供的能力和业务功能对应</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如： 订单服务和数据访问服务，订单服务反应了真实的订单相关业务，数据服务是一种技术抽象服务，不反应真实的业务。</span><br></pre></td></tr></table></figure>
+
+<p>事实上传统应用设计架构的分层结构正反应了不同角色的沟通。所以，若要按微服务的方式来构建应用，也需要对团队的组织架构做调整。每个服务背后的小团队的组织是夸功能的，包含实现业务所需的全面技能。</p>
+<p>推荐组织架构管理</p>
+<p>you build it ,you fix it 开发人员直接对生产负责，最终为这个业务场景，交互负责</p>
+<blockquote>
+<p>开发人员要自己测试，因为没有人比你更熟悉自己写的代码  ownership 要有主人翁意识</p>
+</blockquote>
+<p><img src="/2022/04/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88/img_3.png"></p>
+<p>而不是烟囱式的开发</p>
+<p><img src="/2022/04/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88/img_4.png"></p>
+<p>烟囱式开发讲究只覆盖自己的职能范围。</p>
+<p>微服务是鼓励闭环团队的！</p>
+<p>大前端团队 &gt; 网关接入 &gt; 业务服务 &gt; 平台服务 &gt; 基础设施(PASS&#x2F;SASS)</p>
+<h2 id="去中心化"><a href="#去中心化" class="headerlink" title="去中心化"></a>去中心化</h2><p>每个服务面临的业务场景不同，可以针对性的选择合适的技术解决方案，但也要避免过度多样化，结合团队实际情况来做取舍，要是每个服务都用不同的语言技术栈来实现，维护成本也高</p>
+<ul>
+<li>数据去中心化</li>
+<li>治理去中心话(很多环节容易出现流量热点)</li>
+<li>技术去中心化</li>
+</ul>
+<blockquote>
+<p>每个服务独享自身的数据存储设施(缓存，数据库等)，有利于服务的独立性，隔离相关干扰</p>
+</blockquote>
+<h2 id="基础设施自动化"><a href="#基础设施自动化" class="headerlink" title="基础设施自动化"></a>基础设施自动化</h2><p>无自动化不微服务，自动化包括测试和部署。</p>
+<p>单一进程的传统应用被拆分为一系列的多进程服务后，意味着，开发，调试，测试，监控和部署的复杂度都会相应增加。必须要有合适的自动化基础设施来支持微服务架构模式，否则，开发，运维的成本将大大增加</p>
+<p>CICD: gitlab + gitlab hooks + k8s</p>
+<p>Testing: 测试环境，单元测试，API自动化测试(yapi)</p>
+<p>在线运行时: K8s，以及一系列Prometheus,ELK,Conrtol Panle</p>
+<h2 id="可用性-amp-兼容性设计"><a href="#可用性-amp-兼容性设计" class="headerlink" title="可用性 &amp; 兼容性设计"></a>可用性 &amp; 兼容性设计</h2><p>一定要有一个Desigin For Failure的思想</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">你不要相信任何人，所有你写的东西，你依赖的东西，可能都会炸，都会出事</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">你写的每一行代码都有可能error！</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">抱着这样的决心去写代码。你代码质量不会低到哪里去</span></span><br></pre></td></tr></table></figure>
+
+<p>微服务架构采用<strong>粗粒度的进程通信</strong>，引入二外的复杂性和需要处理的新问题，比如网络延迟，消息格式，负载均衡和容错。。。。忽略其中任何一点都属于对“分布式计算的误解”</p>
+<ul>
+<li>隔离</li>
+<li>超时控制</li>
+<li>负载保护</li>
+<li>限流</li>
+<li>降级</li>
+<li>重试</li>
+<li>负载均衡</li>
+</ul>
+<p>一旦采用了微服务架构模式，那么在服务需要变更时候，我们需要格外小心！</p>
+<p>服务提供者的变更可能引发服务消费者的兼容性破坏。</p>
+<blockquote>
+<p>时刻谨记保持服务契约(接口)的兼容性</p>
+</blockquote>
+<p>Be conservative in what you send, be liberal in what you accept.</p>
+<blockquote>
+<p><strong>发送要保守，接收要开放</strong></p>
+</blockquote>
+<p>按照博斯塔尔法的思想来设计和实现服务，发送数据时候要更加保守，意味着最小化的传递必要信息，接收时更开放意味着要最大限度的容忍冗余数据，保证兼容性！</p>
+<p>“找对象要求不要太高，但是要足够包容对象的小缺点。”【暖渣的终极奥义】</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：微服务概览</li>
+        <li>本文作者：代码小学生王木木</li>
+        <li>创建时间：2022-04-12 18:03:49</li>
+        <li>
+            本文链接：https://keep.xpoet.cn/2022/04/12/微服务概览/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">#微服务</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/13/go%E8%AF%AD%E8%A8%80map%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">go语言map底层原理</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '9zguxtsrRpwq2hw8pncYshco-gzGzoHsz',
+                    appKey: 'FckB6yYv9qcXKlzIhuOxq3eL',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '高低整两句',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = '代码小学生王木木';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">代码小学生王木木</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88"><span class="nav-text">微服务概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84-%E5%B7%A8%E7%9F%B3%E5%BA%94%E7%94%A8"><span class="nav-text">单体架构 (巨石应用)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%86%E5%88%86"><span class="nav-text">拆分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOA-%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1-%E7%9A%84%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">SOA(面向服务)的架构体系和微服务之间的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E5%B0%B1%E6%98%AF%E7%BE%8E"><span class="nav-text">小就是美</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3"><span class="nav-text">单一职责</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%BD%E5%8F%AF%E8%83%BD%E6%97%A9%E7%9A%84%E5%88%9B%E5%BB%BA%E5%8E%9F%E5%9E%8B"><span class="nav-text">尽可能早的创建原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%80%A7%E6%AF%94%E6%95%88%E7%8E%87%E9%87%8D%E8%A6%81"><span class="nav-text">可移植性比效率重要</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">微服务的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E6%9C%8D%E5%8A%A1"><span class="nav-text">原子服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E8%BF%9B%E7%A8%8B"><span class="nav-text">独立进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E9%83%A8%E7%BD%B2"><span class="nav-text">隔离部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E6%B2%BB%E7%90%86"><span class="nav-text">去中心化治理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BC%BA%E7%82%B9"><span class="nav-text">微服务缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%8C%96"><span class="nav-text">组件服务化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E4%B8%9A%E5%8A%A1%E7%BB%84%E7%BB%87%E6%9C%8D%E5%8A%A1"><span class="nav-text">按业务组织服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96"><span class="nav-text">去中心化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="nav-text">基础设施自动化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7-amp-%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AE%BE%E8%AE%A1"><span class="nav-text">可用性 &amp; 兼容性设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
